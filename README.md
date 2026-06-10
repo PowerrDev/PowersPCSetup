@@ -36,12 +36,12 @@ This repository serves as a centralized place to document my Windows 11 setup, m
 - Install Hack Nerd Font
 
 ## Settings
-Set Font -> Lexica Ultralegible
-Set Mouse -> Breeze Cursor (https://github.com/black7375/Breeze-Cursors-for-Windows)
-Effects -> Disable shadow below desktop icon texts
-Set Mouse -> Speed (12)
-Set Mouse -> Disable pointer precision
-Set Mouse -> Scroll 5 lines
+Set Font -> Lexica Ultralegible<br />
+Set Mouse -> Breeze Cursor (https://github.com/black7375/Breeze-Cursors-for-Windows) <br />
+Set Mouse -> Speed (12)<br />
+Set Mouse -> Disable pointer precision<br />
+Set Mouse -> Scroll 5 lines<br />
+Effects -> Disable shadow below desktop icon texts<br />
 Color -> Light Blue
 
 ## Firefox
