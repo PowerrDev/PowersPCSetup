@@ -2,7 +2,7 @@
 
 <h1 align="center"> Windows 11 Configuration </h1>
 
-<p>**This setup is tailored to my personal workflow and performance preferences. Don""t use this blindly without knowing what it does, and make sure you understand what each modification does.**</p>
+<p>This setup is tailored to my personal workflow and performance preferences. Don't use this blindly without knowing what it does, and make sure you understand what each modification does.</p>
 
 ##  Why create this repository?
 
