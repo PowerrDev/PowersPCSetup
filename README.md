@@ -162,7 +162,7 @@ Color -> Light Blue
 - Apply the configurations in this repository!
 
 ## Retrobar
-- Set theme to Windows Longhorn Aero
+- Set theme to Darkness (https://www.deviantart.com/bikehard2ride/art/Darkness-1166365058)
 - Enable "Suavização da Fonte"
 - Hide inactive icons
 - Start automatically on logon
