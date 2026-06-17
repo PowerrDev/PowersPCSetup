@@ -44,6 +44,14 @@ Set Mouse -> Scroll 5 lines<br />
 Effects -> Disable shadow below desktop icon texts<br />
 Color -> Light Blue
 
+### Set Cursor Size (Optional)
+Run the following command in PowerShell:
+```sh
+$size=24; New-ItemProperty -Path 'HKCU:\Control Panel\Cursors' -Name 'CursorBaseSize' -Value $size -PropertyType DWord -Force; Add-Type -TypeDefinition 'using System; using System.Runtime.InteropServices; public class Custom { [DllImport("user32.dll")] public static extern bool SystemParametersInfo(uint uiAction, uint uiParam, uint pvParam, uint fWinIni); }'; [Custom]::SystemParametersInfo(0x2029, 0, $size, 0x01)
+```
+
+The following command will set your mouse cursor to 24px, it *might* look blurry on certain cursors.
+
 ## Firefox
 - Set UI font to "DM Sans"
 - Install Tampermonkey extension
