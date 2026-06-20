@@ -20,6 +20,8 @@ This repository serves as a centralized place to document my Windows 11 setup, m
 - Claude
 - RetroBar
 - Open Shell
+- HideVolumeOSD
+- Flow Launcher
 - Steam
 - MacType
 - Bun
@@ -34,6 +36,11 @@ This repository serves as a centralized place to document my Windows 11 setup, m
 - Install JetBrains Mono Nerd Font
 - Install BlexMono Nerd Font
 - Install Hack Nerd Font
+
+# Cursors
+- Install KDE Plasma Cursor
+- Install macOS Cursor
+- Install Windows Small Cursor
 
 ## Settings
 Set Font -> Lexica Ultralegible<br />
@@ -160,10 +167,42 @@ The following command will set your mouse cursor to 24px, it *might* look blurry
 - Setup everything
 
 ## Visual Studio Code
-- Install all extensions required
+### Install all extensions required:
+- TailwindCSS Intellisense
+- Prisma
+- Prettier
+- Monokai Pro
+- Material Icons Theme
+- Discord Rich Presence
+- Custom UI Style
 - Set font to Inter (via CSS plugins)
 
-## After installing OS:
+User Settings:
+```json
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "oneDarkPro.vivid": true,
+    "editor.tabSize": 2,
+    "custom-ui-style.font.sansSerif": "Inter",
+    "editor.fontFamily": "Hack Nerd Font",
+    "editor.lineHeight": 1.5,
+    "window.menuBarVisibility": "toggle",
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "explorer.compactFolders": false,
+    "workbench.colorTheme": "Monokai Pro",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.sideBar.location": "right",
+    "editor.fontSize": 12,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
+```
+
+## After installing Windows:
 - Setup MacType
 - Setup browsers
 - Setup login into Github, Discord, WhatsApp and Canva
