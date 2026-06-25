@@ -18,7 +18,7 @@ This repository serves as a centralized place to document my Windows 11 setup, m
 - Discord
 - Min Browser
 - Claude
-- RetroBar
+- Windhawk
 - Open Shell
 - HideVolumeOSD
 - Flow Launcher
@@ -210,6 +210,280 @@ User Settings:
 
 ## Retrobar
 - Set theme to Darkness (https://www.deviantart.com/bikehard2ride/art/Darkness-1166365058)
+
+# Windhawk
+After some careful consideration, I decided to use Windhawk instead of Retrobar.
+Here's my KDE Plasma theme:
+```yaml
+theme: ''
+styleConstants:
+  - taskbandInactiveNormal=<SolidColorBrush Color="#000000" Opacity="0.04" />
+  - taskbandPointerOver=<SolidColorBrush Color="#000000" Opacity="0.08" />
+  - taskbandActive=<SolidColorBrush Color="#000000" Opacity="0.10" />
+  - indicatorActive=<SolidColorBrush Color="#3DAEE9" Opacity="0.9" />
+  - indicatorInactive=<SolidColorBrush Color="#000000" Opacity="0.25" />
+  - indicatorPointerOver=<SolidColorBrush Color="#3DAEE9" Opacity="0.7" />
+  - taskbandAttention=<SolidColorBrush Color="#E67E22" Opacity="0.55" />
+  - indicatorAttention=<SolidColorBrush Color="#E67E22" Opacity="0.9" />
+  - selectionBorder=<LinearGradientBrush StartPoint="0,0" EndPoint="1,0"><GradientStop Color="Transparent" Offset="0.0" /><GradientStop Color="Transparent" Offset="0.2" /><GradientStop Color="#3DAEE9" Offset="0.2" /><GradientStop Color="#3DAEE9" Offset="0.8" /><GradientStop Color="Transparent" Offset="0.8" /><GradientStop Color="Transparent" Offset="1.0" /></LinearGradientBrush>
+  - selectionBorderExtended=<SolidColorBrush Color="#3DAEE9" />
+  - desktopButton=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Plasma/ThemeResources/desktop.png
+  - plusIndicator=https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Plasma/ThemeResources/plus.png
+  - StartButton=kubuntu
+  - WindhawkBlur=<WindhawkBlur BlurAmount="2" TintColor="#ccffffff" />
+  - Acrylic=<AcrylicBrush TintColor="#ffffff" TintOpacity="0.70" FallbackColor="#ffffff" />
+controlStyles:
+  - target: Taskbar.TaskbarFrame > Grid#RootGrid > Taskbar.TaskbarBackground > Grid > Rectangle#BackgroundFill
+    styles:
+      - Fill:=$Acrylic
+  - target: Rectangle#BackgroundStroke
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel
+    styles:
+      - Padding=0
+  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius=0
+      - BorderThickness=0
+      - BorderBrush=Transparent
+      - Margin=0
+      - Background@ActiveNormal:=$taskbandActive
+      - Background@InactiveNormal:=$taskbandInactiveNormal
+      - Background@ActivePointerOver:=$taskbandPointerOver
+      - Background@InactivePointerOver:=$taskbandPointerOver
+      - Background@ActivePressed:=$taskbandPointerOver
+      - Background@InactivePressed:=$taskbandPointerOver
+      - Background@MultiWindowNormal:=$taskbandInactiveNormal
+      - Background@MultiWindowPointerOver:=$taskbandPointerOver
+      - Background@MultiWindowPressed:=$taskbandPointerOver
+      - Background@MultiWindowActive:=$taskbandActive
+      - Background@RequestingAttention:=$taskbandAttention
+      - Background@RequestingAttentionPointerOver:=$taskbandPointerOver
+      - Background@RequestingAttentionPressed:=$taskbandPointerOver
+      - Background@RequestingAttentionMulti:=$taskbandAttention
+      - Background@RequestingAttentionMultiPointerOver:=$taskbandPointerOver
+      - Background@RequestingAttentionMultiPressed:=$taskbandPointerOver
+  - target: Taskbar.TaskListButton > Taskbar.TaskListLabeledButtonPanel@RunningIndicatorStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - Opacity@NoRunningIndicator=0
+  - target: Taskbar.TaskListLabeledButtonPanel#IconPanel > Windows.UI.Xaml.Controls.Image#Icon
+    styles:
+      - Padding=6,0,6,0
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#RunningIndicator
+    styles:
+      - Width=50
+      - RadiusX=0
+      - RadiusY=0
+      - Height=3
+      - VerticalAlignment=Top
+      - RenderTransform:=<TranslateTransform X="0" />
+      - Margin=0
+      - Fill@ActiveNormal:=$indicatorActive
+      - Fill@ActivePointerOver:=$indicatorPointerOver
+      - Fill@InactiveNormal:=$indicatorInactive
+      - Fill@InactivePointerOver:=$indicatorPointerOver
+      - Fill@ActivePressed:=$indicatorPointerOver
+      - Fill@InactivePressed:=$indicatorPointerOver
+      - Fill@MultiWindowNormal:=$indicatorInactive
+      - Fill@MultiWindowPointerOver:=$indicatorPointerOver
+      - Fill@MultiWindowPressed:=$indicatorPointerOver
+      - Fill@MultiWindowActive:=$indicatorActive
+      - Fill@RequestingAttention:=$indicatorAttention
+      - Fill@RequestingAttentionPointerOver:=$indicatorPointerOver
+      - Fill@RequestingAttentionPressed:=$indicatorPointerOver
+      - Fill@RequestingAttentionMulti:=$indicatorAttention
+      - Fill@RequestingAttentionMultiPointerOver:=$indicatorPointerOver
+      - Fill@RequestingAttentionMultiPressed:=$indicatorPointerOver
+  - target: Windows.UI.Xaml.Controls.Border#MultiWindowElement
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListLabeledButtonPanel@CommonStates > Windows.UI.Xaml.Shapes.Rectangle#DefaultIcon
+    styles:
+      - Fill:=<ImageBrush Stretch="Uniform" ImageSource="$plusIndicator" />
+      - Width=11
+      - Height=11
+      - RadiusX=0
+      - RadiusY=0
+      - VerticalAlignment=Bottom
+      - HorizontalAlignment=Center
+      - RenderTransform:=<TranslateTransform X="0" />
+      - Visibility=Collapsed
+      - Visibility@MultiWindowNormal=Visible
+      - Visibility@MultiWindowActive=Visible
+      - Visibility@MultiWindowPointerOver=Visible
+      - Visibility@MultiWindowPressed=Visible
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Padding=0
+      - Width=50
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundElement
+    styles:
+      - CornerRadius=0
+      - BorderThickness=0
+      - Width=32
+      - Background=Transparent
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Microsoft.UI.Xaml.Controls.AnimatedVisualPlayer#Icon
+    styles:
+      - Visibility=Collapsed
+  - target: Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel@CommonStates
+    styles:
+      - Width=50
+      - BorderBrush:=$selectionBorder
+      - BorderThickness=0
+      - BorderThickness@ActiveNormal=0,3,0,0
+      - BorderThickness@ActivePointerOver=0,3,0,0
+      - BorderThickness@ActivePressed=0,3,0,0
+  - target: Taskbar.ExperienceToggleButton#LaunchListButton[AutomationProperties.AutomationId=StartButton] > Taskbar.TaskListButtonPanel > Border#BackgroundElement
+    styles:
+      - Background:=<ImageBrush Stretch="Uniform" ImageSource="https://raw.githubusercontent.com/ramensoftware/windows-11-taskbar-styling-guide/refs/heads/main/Themes/Plasma/ThemeResources/$StartButton.png" />
+  - target: Taskbar.AugmentedEntryPointButton[AutomationProperties.AutomationId=WidgetsButton] > Taskbar.TaskListButtonPanel#ExperienceToggleButtonRootPanel
+    styles:
+      - Width=Auto
+  - target: SystemTray.SystemTrayFrame > Grid
+    styles:
+      - VerticalAlignment=Stretch
+      - Height=44
+  - target: SystemTray.SystemTrayFrame
+    styles:
+      - VerticalAlignment=Stretch
+      - Height=44
+  - target: SystemTray.Stack#MainStack
+    styles:
+      - VerticalAlignment=Center
+      - Height=44
+  - target: SystemTray.Stack#NonActivatableStack
+    styles:
+      - Grid.Column=2
+      - VerticalAlignment=Center
+      - Height=44
+  - target: SystemTray.Stack#NotifyIconStack
+    styles:
+      - Grid.Column=0
+      - VerticalAlignment=Center
+      - Height=44
+  - target: SystemTray.Stack#ShowDesktopStack
+    styles:
+      - Width=48
+      - VerticalAlignment=Stretch
+      - Height=44
+  - target: SystemTray.NotificationAreaIcons#NotificationAreaIcons
+    styles:
+      - Grid.Column=1
+      - VerticalAlignment=Center
+  - target: SystemTray.OmniButton#ControlCenterButton
+    styles:
+      - Grid.Column=3
+      - VerticalAlignment=Center
+  - target: SystemTray.OmniButton#ControlCenterButton
+    styles:
+      - Visibility=Collapsed
+
+  - target: SystemTray.Stack#MainStack
+    styles:
+      - Margin=0
+      - Padding=0
+
+  - target: SystemTray.Stack#NotifyIconStack
+    styles:
+      - Margin=0
+  - target: SystemTray.OmniButton > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background=Transparent
+      - Margin=1,0,1,0
+      - CornerRadius=0
+      - VerticalAlignment=Center
+  - target: SystemTray.OmniButton > Windows.UI.Xaml.Controls.Grid@CommonStates > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - BorderThickness=0
+      - BorderBrush@Checked:=$selectionBorderExtended
+      - BorderThickness@Checked=0,3,0,0
+      - BorderBrush@CheckedPointerOver:=$selectionBorderExtended
+      - BorderThickness@CheckedPointerOver=0,3,0,0
+      - BorderBrush@CheckedPressed:=$selectionBorderExtended
+      - BorderThickness@CheckedPressed=0,3,0,0
+  - target: Windows.UI.Xaml.Controls.Grid#ContainerGrid@ > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - BorderThickness=0
+      - BorderBrush@CheckedNormal:=$selectionBorderExtended
+      - BorderThickness@CheckedNormal=0,3,0,0
+      - BorderBrush@CheckedPointerOver:=$selectionBorderExtended
+      - BorderThickness@CheckedPointerOver=0,3,0,0
+      - BorderBrush@CheckedPressed:=$selectionBorderExtended
+      - BorderThickness@CheckedPressed=0,3,0,0
+  - target: SystemTray.NotifyIconView#NotifyItemIcon
+    styles:
+      - MinWidth=24
+      - VerticalAlignment=Center
+  - target: SystemTray.NotifyIconView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background=Transparent
+      - Margin=1,0,1,0
+      - CornerRadius=0
+      - VerticalAlignment=Center
+  - target: SystemTray.IconView#SystemTrayIcon > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background=Transparent
+      - Margin=1,0,1,0
+      - CornerRadius=0
+      - VerticalAlignment=Center
+  - target: SystemTray.ChevronIconView
+    styles:
+      - Margin=-5,0
+      - VerticalAlignment=Center
+  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid > Windows.UI.Xaml.Controls.Border#BackgroundBorder
+    styles:
+      - Background=Transparent
+      - Margin=1,0,1,0
+      - CornerRadius=0
+      - VerticalAlignment=Center
+  - target: SystemTray.ChevronIconView > Windows.UI.Xaml.Controls.Grid#ContainerGrid > Windows.UI.Xaml.Controls.ContentPresenter#ContentPresenter > Windows.UI.Xaml.Controls.Grid#ContentGrid > SystemTray.TextIconContent > Windows.UI.Xaml.Controls.Grid#ContainerGrid > SystemTray.AdaptiveTextBlock#Base > Windows.UI.Xaml.Controls.TextBlock#InnerTextBlock
+    styles:
+      - FontSize=17.33
+      - VerticalAlignment=Center
+      - Foreground=#2B2B2B
+  - target: Windows.UI.Xaml.Controls.TextBlock#TimeInnerTextBlock
+    styles:
+      - FontSize=17.33
+      - TextAlignment=Center
+      - VerticalAlignment=Center
+      - FontFamily=Lexica Ultralegible, Segoe UI
+      - Foreground=#2B2B2B
+  - target: Windows.UI.Xaml.Controls.TextBlock#DateInnerTextBlock
+    styles:
+      - FontSize=13.33
+      - TextAlignment=Center
+      - VerticalAlignment=Center
+      - FontFamily=Lexica Ultralegible, Segoe UI
+      - Margin=0,-5,0,0
+      - Foreground=#2B2B2B
+  - target: SystemTray.DateTimeIconContent > Windows.UI.Xaml.Controls.Grid#ContainerGrid
+    styles:
+      - Padding=0
+      - VerticalAlignment=Center
+  - target: SystemTray.IconView[AutomationProperties.Name=Show Desktop]
+    styles:
+      - Width=48
+      - VerticalAlignment=Center
+  - target: Windows.UI.Xaml.Shapes.Rectangle#ShowDesktopPipe
+    styles:
+      - Width=48
+      - Height=44
+      - Fill:=<ImageBrush Stretch="None" ImageSource="$desktopButton" />
+  - target: SystemTray.StackListView[AutomationProperties.AutomationId=Main]
+    styles:
+      - Foreground=#2B2B2B
+      - Margin=-8,0,0,0
+      - VerticalAlignment=Center
+  - target: SystemTray.AdaptiveTextBlock#LanguageInnerTextBlock > Windows.UI.Xaml.Controls.TextBlock
+    styles:
+      - FontFamily=Lexica Ultralegible, Segoe UI
+      - VerticalAlignment=Center
+      - Foreground=#2B2B2B
+themeResourceVariables:
+  - ''
+xamlDiagnosticsHandling: ''
+```
 - Enable "Suavização da Fonte"
 - Hide inactive icons
 - Start automatically on logon
